@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-IQ-DAY-5</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1>JAVASCRIPT INTERVIEW QUESTIONS PREPARATION DAY-5</h1>
+
+    <p>27.What is hoisting?</p>
+    <pre>
+        IN JS, Hoisting is a javascript mechanism where functions and variables are moved to top of the their scope before code execution.
+        -Javascript allows only variable declarations , not initialization.
+        -variable hoisting: In terms of variable hoisting , like var is hoisting but let and const keywords are not hoisted because they are in temporal dead zone.
+        -we can access a function or a variable before its declarations this is called hoisting behavior.
+    </pre>
+
+    <p>28.What is a Temporal Dead Zone?</p>
+    <pre>
+        IN JS, A Temporal Dead Zone is a behavior that occur when declating a variable with let and const keywords , but not happens with var keyword.
+        -The time span when that happens, between the creating a variable and binding its declaration is called Temporal Dead Zone.
+    </pre>
+
+    <p>29.What is the DOM?</p>
+    <pre>
+        IN JS, DOM stands for Document Object Model it is a programming interfacefor web documents.
+        it represents the page so the program can easily change the style, content, structure.the DOM represents the documents as nodes and objects.
+        simply it is a way of programming language to interact with the page.
+
+        DOM Methods:
+        getElementById()
+        getElementsByClassName()
+        getElementsByTagName()
+        querySelector()
+        querySelectorAll()
+
+        DOM some propertys:
+        innerHTML
+        textcontent
+        innertext
+        and etc...
+    </pre>
+
+    <p>30.Explain passed by value and passed by reference?</p>
+    <pre>
+        passed by value:-
+        function is called directly by passing a value of a variable as an argument.
+        so any changes made outside of the function does not effect the original value.
+        -In pass by value, parameters passed as an arguments create its own copy.
+        so any changes , made inside function made to copy value not original value.
+
+        EX:
+        function sqr(a){
+           return a*a
+        }
+        let b = 10;
+        console.log(sqr(b)); --->100
+        console.log(b); --->10 value not change
+
+        passed by reference:-
+        function is called directly by passing reference/address of a variable as an argument.
+        so any changes made outside of the function is effect the original value.
+        -In pass by reference, parameters passed as an arguments does not create its own copy.
+        so any changes , made inside function is effect to the original value.
+        
+        EX:
+        let student = {
+            name:'abc',
+            id: 1001
+        }
+        function incid(obj){
+            obj.id+=1
+        }
+        incid(student);
+        consol.log(student);
+    </pre>
+
+    <p>31.Write code to explain map and filter in arrays?</p>
+    <pre>
+        map:
+        const arr = [ 1,2,3,4,5];
+
+        const newarr = arr.map((element) => element*2);
+        console.log(newarr);
+
+        filter:
+        const arr1 = [ 1,2,3,4,5];
+
+        const newarr1 = arr.filter((element) => element > 2);
+        console.log(newarr1);
+    </pre>
+
+    <p>32.What is the purpose of async/await keywords?</p>
+    <pre>
+        IN JS, async function is a function declared with the async keyword.
+        and await is keyword is used inside async function.
+        -The async/await keywords are enables asychronous ,promise-based behavior to written in a cleaner style.avoiding need of promise chain.
+        -The use of await keyword pause the function until the promise return the result value.
+
+        EX:
+        let p  = new Promise((res,rej) => {
+            setTimeout(() => {
+                res('this is promis function')
+            }, 5000);
+        })
+        
+        async function asyncfunction(){
+            let result = await p
+            console.log(result);
+            console.log('this is async function');
+        }
+        asyncfunction();
+    </pre>
+
+    <p>33.Give an example of async/await?</p>
+    <pre>
+        EX:
+        let p  = new Promise((res,rej) => {
+            setTimeout(() => {
+                res('this is promis function')
+            }, 5000);
+        })
+        
+        async function asyncfunction(){
+            let result = await p
+            console.log(result);
+            console.log('this is async function');
+        }
+        asyncfunction();
+    </pre>
+    <script src="./main.js"></script>
+</body>
+</html>
